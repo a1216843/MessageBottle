@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MessageBottle</string>
+    <string name="sex_is_man">남자</string>
+    <string name="sex_is_male">여자</string>
+    <string name="unknown_date">보낸 날짜 : 알 수 없음</string>
+    <string name="unknown_receive_user">받는 사람 : 누군가</string>
 </resources>
