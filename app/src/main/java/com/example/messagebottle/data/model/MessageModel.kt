@@ -1,8 +1,9 @@
-package com.example.messagebottle.ui.model
+package com.example.messagebottle.data.model
 
 import android.content.Context
 import com.example.messagebottle.R
-import com.example.messagebottle.utils.DateUtils.dateFormatToShow
+import com.example.messagebottle.ui.item.MessageItem
+import com.example.messagebottle.utils.DateUtils
 import java.lang.IllegalArgumentException
 
 data class MessageModel(
@@ -17,7 +18,7 @@ data class MessageModel(
 fun MessageModel.mapToPresentation(context: Context) = MessageItem(
     send_user = send_user,
     send_date = try {
-        com.example.messagebottle.utils.DateUtils.dateFormatToShow.format(send_date)
+        DateUtils.dateFormatToShow.format(send_date)
     } catch (e : IllegalArgumentException) {
         context.resources.getString(R.string.unknown_date)
     },

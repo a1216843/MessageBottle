@@ -1,4 +1,4 @@
-package com.example.messagebottle.ui.model
+package com.example.messagebottle.ui.item
 
 data class MessageItem(
     val send_user : String,

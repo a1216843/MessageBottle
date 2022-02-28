@@ -1,4 +1,4 @@
-package com.example.messagebottle.ui.model
+package com.example.messagebottle.ui.item
 
 data class FriendItem(
     val uid : String,

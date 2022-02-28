@@ -1,6 +1,7 @@
-package com.example.messagebottle.ui.model
+package com.example.messagebottle.data.model
 
 import android.content.Context
+import com.example.messagebottle.ui.item.FriendItem
 
 data class FriendModel(
     val uid : String,
