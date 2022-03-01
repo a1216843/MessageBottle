@@ -7,15 +7,17 @@ import com.example.messagebottle.utils.DateUtils
 import java.lang.IllegalArgumentException
 
 data class MessageModel(
-    val send_user : String,
-    val send_date : String,
-    val message : String,
-    val receive_user: String?,
-    val receive_uid : String,
-    val image_url : String
+    val message_uid : String = "",
+    val send_user : String = "",
+    val send_date : String = "",
+    val message : String = "",
+    val receive_user: String? = "",
+    val receive_uid : String = "",
+    val image_url : String = ""
 )
 
 fun MessageModel.mapToPresentation(context: Context) = MessageItem(
+    message_uid = message_uid,
     send_user = send_user,
     send_date = try {
         DateUtils.dateFormatToShow.format(send_date)

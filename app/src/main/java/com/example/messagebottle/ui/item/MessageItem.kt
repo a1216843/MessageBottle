@@ -1,6 +1,7 @@
 package com.example.messagebottle.ui.item
 
 data class MessageItem(
+    val message_uid : String,
     val send_user : String,
     val send_date : String,
     val message : String,

@@ -4,12 +4,12 @@ import android.content.Context
 import com.example.messagebottle.ui.item.FriendItem
 
 data class FriendModel(
-    val uid : String,
-    val name : String,
-    val age : Int,
-    val location : String,
-    val interest : String,
-    val message_cnt : Int
+    val uid : String = "",
+    val name : String = "",
+    val age : Int = 0,
+    val location : String = "",
+    val interest : String = "",
+    val message_cnt : Int = 0
 )
 
 fun FriendModel.mapToPresentation(context: Context) = FriendItem (
