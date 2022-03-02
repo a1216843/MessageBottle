@@ -5,6 +5,7 @@ import com.example.messagebottle.R
 import com.example.messagebottle.ui.item.UserItem
 
 data class UserModel(
+    val email : String = "",
     val uid : String = "",
     val name : String = "",
     val age : Int = 0,
@@ -16,6 +17,7 @@ data class UserModel(
 )
 
 fun UserModel.mapToPresentation(context: Context) = UserItem(
+    email = email,
     name = name,
     age = age,
     sex = if(sex) context.resources.getString(R.string.sex_is_man)

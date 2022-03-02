@@ -4,4 +4,5 @@ import com.example.messagebottle.data.model.UserModel
 
 interface UserRepository {
     fun getUserRepository() : UserModel
+    fun setUserRepository() : Boolean
 }

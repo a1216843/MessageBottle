@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.messagebottle.R
+import com.example.messagebottle.data.remote.ApiProvider
 import com.example.messagebottle.databinding.FragmentWriteBinding
+import com.example.messagebottle.repository.MessageRepository
+import com.example.messagebottle.repository.MessageRepositoryImpl
+import com.example.messagebottle.ui.viewmodel.WriteViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +30,11 @@ class WriteFragment : Fragment() {
     companion object {
         fun newInstance() = WriteFragment()
     }
+    private val messageRepository : MessageRepository = MessageRepositoryImpl(ApiProvider.UserApi, ApiProvider.MessageApi)
+
+    private val writeModel by lazy {
+        WriteViewModel(messageRepository)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,6 +43,9 @@ class WriteFragment : Fragment() {
     ): View? {
         binding = FragmentWriteBinding.inflate(inflater, container, false)
         return binding.root
+    }
+    private fun initEditText() {
+        binding
     }
 
 }

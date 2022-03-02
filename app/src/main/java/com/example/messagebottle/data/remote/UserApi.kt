@@ -1,6 +1,7 @@
 package com.example.messagebottle.data.remote
 
 import com.example.messagebottle.data.model.UserModel
+import com.example.messagebottle.ui.item.UserItem
 import com.google.firebase.FirebaseException
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -24,5 +25,17 @@ class UserApi {
            System.out.println(e.message)
            result
        }
+    }
+    suspend fun setUser(user : UserItem) : Boolean {
+        var result = false
+        return try {
+            db.collection("User").document(user.email).set(user)
+                .addOnSuccessListener {
+                    result = true
+                }.await()
+            result
+        } catch (e : FirebaseException) {
+            result
+        }
     }
 }
