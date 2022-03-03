@@ -2,9 +2,10 @@ package com.example.messagebottle.ui.viewmodel
 
 import androidx.databinding.Observable
 import androidx.databinding.ObservableField
+import androidx.lifecycle.ViewModel
 import com.example.messagebottle.repository.MessageRepository
 
-class WriteViewModel(private val messageRepository: MessageRepository) {
+class WriteViewModel(private val messageRepository: MessageRepository) : ViewModel() {
     val isLoading = ObservableField(false)
     val enabledSendButton = ObservableField(true)
     val errorMessage = ObservableField("")

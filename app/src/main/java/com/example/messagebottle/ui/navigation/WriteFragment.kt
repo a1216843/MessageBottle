@@ -32,6 +32,7 @@ class WriteFragment : Fragment() {
     }
     private val messageRepository : MessageRepository = MessageRepositoryImpl(ApiProvider.UserApi, ApiProvider.MessageApi)
 
+    // TODO : ViewModel Factory 사용해서 생성하는 것으로 변경할 것
     private val writeModel by lazy {
         WriteViewModel(messageRepository)
     }

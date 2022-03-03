@@ -5,7 +5,7 @@ import com.example.messagebottle.data.model.UserModel
 import com.example.messagebottle.data.remote.MessageApi
 import com.example.messagebottle.data.remote.UserApi
 
-abstract class MessageRepositoryImpl(private val userApi: UserApi, private val messageApi : MessageApi) : MessageRepository, UserRepository{
+class MessageRepositoryImpl(private val userApi: UserApi, private val messageApi : MessageApi) : MessageRepository, UserRepository{
     override fun getMessageRepository(): MessageModel {
         // 수신자가 편지 확인할 때 사용
         // messageApi 사용해서 가져오기

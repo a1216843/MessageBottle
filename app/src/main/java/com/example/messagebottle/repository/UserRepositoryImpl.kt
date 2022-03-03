@@ -1,13 +1,15 @@
 package com.example.messagebottle.repository
 
 import com.example.messagebottle.data.model.UserModel
+import com.example.messagebottle.data.remote.UserApi
 
-class UserRepositoryImpl : UserRepository {
+class UserRepositoryImpl(private val userApi: UserApi) : UserRepository {
     override fun getUserRepository(): UserModel {
         TODO("Not yet implemented")
     }
 
-    override fun setUserRepository(): Boolean {
+    fun setUserRepository(): Boolean {
+        // 유저 등록할 때 사용
         TODO("Not yet implemented")
     }
 }

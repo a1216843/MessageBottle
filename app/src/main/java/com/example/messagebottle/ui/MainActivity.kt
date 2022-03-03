@@ -72,14 +72,17 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
             }
         return false
     }
+
     fun initUserInfo(info : UserModel?, context: Context) {
         user_info = info?.mapToPresentation(context)
     }
+    // 최초 Fragment 영역 초기화
     private fun initMainFragment() {
         supportFragmentManager.beginTransaction()
             .add(binding.content.id, UserFragment.newInstance())
             .commit()
     }
+    // WriteFragment 전환
     fun goToWriteFragment() {
         supportFragmentManager
             .beginTransaction()
