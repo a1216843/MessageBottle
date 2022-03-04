@@ -12,6 +12,7 @@ import kotlinx.coroutines.tasks.await
 class UserApi {
     private val db = Firebase.firestore
     val TAG = "UserApi"
+
     suspend fun getUser(user : String): UserModel? {
         var result : UserModel? = null
        return try {

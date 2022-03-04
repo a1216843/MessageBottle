@@ -17,9 +17,9 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.auth.FirebaseAuthCredentialsProvider
 
-const val TAG = "LoginActivity"
 
 class LoginActivity : AppCompatActivity() {
+    val TAG = "LoginActivity"
     val binding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
 
     // 로그인 Provider 등록
@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // Repository 생성
-    private val userRepository : UserRepository = UserRepositoryImpl(ApiProvider.UserApi)
+    private val userRepository : UserRepositoryImpl = UserRepositoryImpl(ApiProvider.UserApi)
     // ViewModel 생성
     private val loginViewModel by lazy {
         ViewModelProvider(this, object : ViewModelProvider.Factory {
@@ -50,6 +50,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        // 로그인 실행
         signInLauncher.launch(signInIntent)
     }
 
