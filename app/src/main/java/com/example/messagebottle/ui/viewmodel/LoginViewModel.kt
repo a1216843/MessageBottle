@@ -3,6 +3,7 @@ package com.example.messagebottle.ui.viewmodel
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
+import com.example.messagebottle.repository.UserRepository
 import com.example.messagebottle.repository.UserRepositoryImpl
 import com.example.messagebottle.ui.item.UserItem
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
@@ -16,7 +17,7 @@ import kotlinx.coroutines.launch
 import java.security.SecureRandom
 
 
-class LoginViewModel(private val userRepository: UserRepositoryImpl) : ViewModel() {
+class LoginViewModel(private val userRepository: UserRepository) : ViewModel() {
 
     private val db = Firebase.firestore
     val TAG = "LoginViewModel"

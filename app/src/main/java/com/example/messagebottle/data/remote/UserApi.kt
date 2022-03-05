@@ -1,5 +1,6 @@
 package com.example.messagebottle.data.remote
 
+import android.util.Log
 import com.example.messagebottle.data.model.UserModel
 import com.example.messagebottle.ui.item.UserItem
 import com.google.firebase.FirebaseException
@@ -37,6 +38,26 @@ class UserApi {
             result
         } catch (e : FirebaseException) {
             result
+        }
+    }
+    suspend fun getRandomUser() : String {
+        var result = ""
+        return try {
+            db.collection("User").whereGreaterThanOrEqualTo("random_id", 0)
+                .orderBy("random")
+                .limit(1)
+                .get()
+                .addOnSuccessListener {
+                    if(it.isEmpty!!) {
+                        for(document in it) {
+                            result = document.toObject<UserModel>().email
+                        }
+                    }
+                }.await()
+            return result
+        } catch (e : FirebaseException) {
+            Log.d(TAG, "Error : getRandomUser / ${e.message}")
+            return result
         }
     }
 }

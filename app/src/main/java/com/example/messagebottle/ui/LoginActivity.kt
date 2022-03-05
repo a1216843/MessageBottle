@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // Repository 생성
-    private val userRepository : UserRepositoryImpl = UserRepositoryImpl(ApiProvider.UserApi)
+    private val userRepository : UserRepository = UserRepositoryImpl(ApiProvider.UserApi)
     // ViewModel 생성
     private val loginViewModel by lazy {
         ViewModelProvider(this, object : ViewModelProvider.Factory {
